@@ -1,15 +1,26 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <Title title="Catatan Pengeluaran" />
+  <ListPengeluaran :dataPengeluaran="dataPengeluaran"/>
 </template>
-
+  
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Title from './components/Title.vue';
+import ListPengeluaran from './components/ListPengeluaran.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Title,
+    ListPengeluaran,
+  },
+  data(){
+    return{
+      dataPengeluaran : [
+        { nominal: 20000, keterangan: "Makan siang"},
+        { nominal: 25000, keterangan: "Beli pulsa"},
+        { nominal: 15000, keterangan: "Beli bensin"},
+      ]
+    }
   }
 }
 </script>
